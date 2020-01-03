@@ -1,0 +1,27 @@
+<h1>Bookings</h1>
+<p>These Reservations have been loaded from the SmallHotelDB.</p>
+<p *ngIf="!reservations"><em>Loading reservations... please wait.</em></p>
+<table class='table' *ngIf="reservations">
+    <thead>
+        <tr>
+            <th>RoomName</th>
+            <th>UserName</th>
+            <th>ReservationID</th>
+            <th>UserID</th>
+            <th>RoomID</th>
+            <th>ReservationStartDate</th>
+            <th>ReservationEndDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reservation of reservations">
+            <td>{{ reservation.RoomName }}</td>
+            <td>{{ reservation.UserName }}</td>
+            <td>{{ reservation.ReservationID }}</td>
+            <td>{{ reservation.UserID }}</td>
+            <td>{{ reservation.RoomID }}</td>
+            <td>{{ reservation.ReservationStartDate }}</td>
+            <td>{{ reservation.ReservationEndDate }}</td>
+        </tr>
+    </tbody>
+</table>

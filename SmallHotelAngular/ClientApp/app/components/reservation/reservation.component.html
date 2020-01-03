@@ -1,0 +1,31 @@
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>-->
+<h1>Reservate your room</h1>
+
+<p>This section demonstrates reservations of rooms...</p>
+
+<h3>
+    Select date from : <input type="date" id="dateStartDate" (change)="onDateStartChanged();" ng-model="startDate">
+                   to: <input type="date" id="dateEndDate"   (change)="onDateEndChanged();"   ng-model="endDate">
+</h3>
+
+<div>
+    <h3  *ngIf="res == null || !isDateRangeOK">Select start and end date to get list of available rooms.</h3>
+    <div *ngIf="res != null && isDateRangeOK">
+        <h3>
+            Select a room:
+            <select [(ngModel)]="res.ReservationExtended" (change)="onChange($event.target.value)">
+                <option *ngFor="let re of res" [ngValue]="re.RoomID">{{re.RoomName}}</option>
+            </select>
+        </h3>
+    </div>
+</div>
+
+<div *ngIf="selectedImgSrc && isDateRangeOK">
+    <img src="{{ selectedImgSrc }}" />
+    <h3>{{ selectedRoomDescription }}</h3>
+    <h3>Write email on order to make reservation: <input id="txtEmail" type="text" ng-model="email" (keyup)="checkEmail()"></h3>
+</div>
+ 
+<div *ngIf="btnReservationVisible && isDateRangeOK">
+    <h3><button id="btnMakeReservation" (click)="onMakeReservation()">{{ reservationState }}</button></h3>
+</div>

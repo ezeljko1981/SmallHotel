@@ -1,0 +1,17 @@
+<h1>Users</h1>
+<p>These Users have been loaded from the SmallHotelDB.</p>
+<p *ngIf="!users"><em>Loading users... please wait.</em></p>
+<table class='table' *ngIf="users">
+    <thead>
+        <tr>
+            <th>UserID</th>
+            <th>UserName</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{ user.UserID}}</td>
+            <td>{{ user.UserName}}</td>
+        </tr>
+    </tbody>
+</table>

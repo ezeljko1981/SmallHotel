@@ -1,0 +1,45 @@
+<div class='main-nav'>
+    <div class='navbar navbar-inverse'>
+        <div class='navbar-header'>
+            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
+                <span class='sr-only'>Toggle navigation</span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+            <a class='navbar-brand' [routerLink]="['/home']">Small Hotel via Angular</a>
+        </div>
+        <div class='clearfix'></div>
+        <div class='navbar-collapse collapse'>
+            <ul class='nav navbar-nav'>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/home']">
+                        <span class='glyphicon glyphicon-home'></span> Home
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/reservation']">
+                        <span class='glyphicon glyphicon-bookmark'></span> Reservate room here
+                    </a>
+                </li>
+                <hr />
+                <h4  class='navbar-brand'>Control data</h4>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/users']">
+                        <span class='glyphicon glyphicon-user'></span> Users (List)
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/rooms']">
+                        <span class='glyphicon glyphicon-home'></span> Rooms (List)
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/reservations']">
+                        <span class='glyphicon glyphicon-bookmark'></span> Reservations (List)
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

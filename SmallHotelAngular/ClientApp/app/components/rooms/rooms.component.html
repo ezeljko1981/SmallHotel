@@ -1,0 +1,23 @@
+<h1>Rooms</h1>
+<p>These Rooms have been loaded from the SmallHotelDB.</p>
+<p *ngIf="!rooms"><em>Loading rooms... please wait.</em></p>
+<table class='table' *ngIf="rooms">
+    <thead>
+        <tr>
+            <th>RoomID</th>
+            <th>RoomName</th>
+            <th>RoomCapacity</th>
+            <th>RoomWiFi</th>
+            <th>RoomMinibar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let room1 of rooms">
+            <td>{{ room1.RoomID }}</td>
+            <td>{{ room1.RoomName }}</td>
+            <td>{{ room1.RoomCapacity }}</td>
+            <td>{{ room1.RoomWiFi }}</td>
+            <td>{{ room1.RoomMinibar }}</td>
+        </tr>
+    </tbody>
+</table>
